@@ -37,6 +37,13 @@ public class PlayerController : MonoBehaviour {
         body.AddForce(new Vector2(((horizontal * Speed) - body.velocity.x) * moveLimiter, ((vertical * Speed) - body.velocity.y) * moveLimiter));
     }
 
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
 
 
