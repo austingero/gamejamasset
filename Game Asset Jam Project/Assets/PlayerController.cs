@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
     Rigidbody2D body;
     Animator Character;
     SpriteRenderer Movement;
+    private int ingredients;
+    public Text countIngredients;
+    public Text allGathered;
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
@@ -16,6 +20,9 @@ public class PlayerController : MonoBehaviour {
         body = GetComponent<Rigidbody2D>();
         Character = GetComponent<Animator>();
         Movement = GetComponent<SpriteRenderer>();
+        ingredients = 0;
+        allGathered.text = " ";
+        SetCountIngredients();
     }
 
 
@@ -42,6 +49,17 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag("Pickup"))
         {
             other.gameObject.SetActive(false);
+            ingredients = ingredients + 1;
+            SetCountIngredients();
+        }
+    }
+    void SetCountIngredients()
+    {
+        countIngredients.text = "Ingredients:" + countIngredients.ToString();
+
+        if (ingredients >= 3)
+        {
+            allGathered.text = " It is a Cheese Burger! Congradulations! ";
         }
     }
 }
