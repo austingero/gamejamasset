@@ -8,6 +8,22 @@ public class PlayerController : MonoBehaviour {
     Rigidbody2D body;
     Animator Character;
     SpriteRenderer Movement;
+    public class PlayerStats
+    {
+        public int HealthAmount = 100;
+    }
+
+    public PlayerStats playerStats = new PlayerStats();
+
+    
+    public void DamagePlayer(int amount)
+    {
+        playerStats.HealthAmount -= amount;
+        if (playerStats.HealthAmount <= 0)
+        {
+            PlayerMA.EliminateChef(this);
+        }
+    }
     private int ingredients;
     public Text countIngredients;
     public Text allGathered;
@@ -17,12 +33,14 @@ public class PlayerController : MonoBehaviour {
     public float Speed = 10;
 
     void Start() {
+        
         body = GetComponent<Rigidbody2D>();
         Character = GetComponent<Animator>();
         Movement = GetComponent<SpriteRenderer>();
         ingredients = 0;
         allGathered.text = " ";
         SetCountIngredients();
+       
     }
 
 
