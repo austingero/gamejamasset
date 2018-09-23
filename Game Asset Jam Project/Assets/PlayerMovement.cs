@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     Animator Character;
     SpriteRenderer Movement;
     public float speed;
+    public float MaxSpeed;
     public class PlayerStats
     {
         public int HealthAmount = 100;
@@ -40,7 +41,11 @@ public class PlayerMovement : MonoBehaviour {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb2d.AddForce(movement * speed);
+        if(rb2d.velocity.magnitude < MaxSpeed)
+        {
+            rb2d.AddForce(movement * speed);
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
