@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     public float speed;
     public float MaxSpeed;
     public class PlayerStats
+     
     {
         public int HealthAmount = 100;
     }
@@ -26,6 +27,8 @@ public class PlayerMovement : MonoBehaviour {
     private int ingredients;
     public Text countIngredients;
     public Text allGathered;
+    public Text amountText;
+    public Text completeText;
 
 
     // Use this for initialization
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour {
             other.gameObject.SetActive(false);
             ingredients = ingredients + 1;
             SetCountIngredients();
+           
         }
     }
 
@@ -69,8 +73,5 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+ 
 }
