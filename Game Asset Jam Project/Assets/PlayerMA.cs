@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMA : MonoBehaviour
 {
 
-    public static void EliminateChef(PlayerController Chef)
+    public static void EliminateChef(PlayerMovement Chef)
     {
         Destroy(Chef.gameObject);
     }
