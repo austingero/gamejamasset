@@ -2275,6 +2275,7 @@ GameObject:
   - component: {fileID: 244409219}
   - component: {fileID: 244409218}
   - component: {fileID: 244409217}
+  - component: {fileID: 244409221}
   m_Layer: 0
   m_Name: Hamburger Bun
   m_TagString: Pickup
@@ -2367,6 +2368,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244409221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244409216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece8aeff4c20cb841b13299f7c595eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 747563181}
 --- !u!1 &252033149
 GameObject:
   m_ObjectHideFlags: 0

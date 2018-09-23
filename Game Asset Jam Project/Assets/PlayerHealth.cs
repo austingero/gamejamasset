@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Game Over");
-            menu.QuitGame();
+            menu.WinningScene();
         }
 
         if (RegainHealth)
