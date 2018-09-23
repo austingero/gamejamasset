@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game Asset Jam Project/Game Asset Jam Project.unity
     guid: c8b3df1d5f1ea4f44ab84df333cf118f
+  - enabled: 1
+    path: Assets/More Scenes/Game Over.unity
+    guid: 5d7adf97ecacade44a77704d946451da
   m_configObjects: {}
